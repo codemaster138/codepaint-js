@@ -2,7 +2,7 @@
     "name": "codepaint",
     "version": "1.0.0",
     "description": "A syntax highlighter for the web",
-    "main": "js/bundle.js",
+    "main": "out/bundle.js",
     "scripts": {
         "build": "webpack",
         "prepublish": "webpack --mode=production"
