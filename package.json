@@ -5,7 +5,7 @@
     "main": "js/bundle.js",
     "scripts": {
         "build": "webpack",
-        "prepublish": "webpack"
+        "prepublish": "webpack --mode=production"
     },
     "repository": "https://github.com/codemaster138/codepaint-js",
     "author": "Jake <pygamer138@gmail.com>",
