@@ -1,7 +1,7 @@
 import javascript from './javascript';
 
 export interface TokenRule {
-  match: RegExp;
+  match: RegExp | string;
 }
 
 export interface Language {

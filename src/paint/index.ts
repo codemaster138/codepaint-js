@@ -14,8 +14,10 @@ function stringifyTokens(tokens: Token[], l: Language) {
   return tokens.map(token => `<span class="token ${token.type}${[''].concat(associations(token, l.token_groupings)).join(' ')}">${token.value}</span>`).join('');
 }
 
-export function generateFromHTML(element: HTMLElement, language?: string): string {
-  const l = languages[language || 'javascript'];
+export function generateFromHTML(element: HTMLElement, language?: string | Language): string {
+  const l = (!language || typeof language === 'string')
+    ? languages[language || 'javascript']
+    : language;
   if (!l) return element.innerText;
 
   const text = element.innerText;
@@ -24,8 +26,10 @@ export function generateFromHTML(element: HTMLElement, language?: string): strin
   return stringifyTokens(tokens, l);
 }
 
-export function generateFromText(text: string, language?: string) {
-  const l = languages[language || 'javascript'];
+export function generateFromText(text: string, language?: string | Language) {
+  const l = (!language || typeof language === 'string')
+    ? languages[language || 'javascript']
+    : language;
   if (!l) return text;
 
   const tokens = tokenize(text, l.tokens);

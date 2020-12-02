@@ -4,16 +4,15 @@ export default class Pos {
     this.idx = idx || 0;
     this.col = col || 0;
     this.ln = ln || 0;
+    this.oldLn = ln || 0;
   }
 
   advance(n: number) {
-    for (let i: number = 0; i < n; i++) {
-      if (this.text[this.idx] === '\n') {
-        this.col = 0;
-        this.ln++;
-      }
-      this.idx++;
-    }
+    this.idx += n;
+    this.col += n;
+    this.oldLn = this.ln;
+    this.ln = this.text.slice(0, this.idx).split('\n').length;
+    if (this.oldLn !== this.ln) this.col = 0;
   }
 
   clone(): Pos {
@@ -24,4 +23,5 @@ export default class Pos {
   idx: number;
   col: number;
   ln: number;
+  oldLn: number;
 }

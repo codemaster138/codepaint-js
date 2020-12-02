@@ -28,7 +28,9 @@ export class Lexer {
     while (this.selection) {
       let token: Token | undefined = undefined;
       for (let name in this.tokens) {
-        const res = this.tokens[name].match.exec(this.selection);
+        const res = typeof this.tokens[name].match === 'string'
+          ? { 0: (this.tokens[name].match as string), index: this.selection.startsWith(this.tokens[name].match as string) ? 0 : null }
+          : (this.tokens[name].match as RegExp).exec(this.selection);
         if (res && (res.index === 0)) {
           const pos_start = this.pos.clone();
           this.advance(res[0].length);

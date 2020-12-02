@@ -1,22 +1,22 @@
 const javascript = {
   tokens: {
     'period': {
-      match: /\./
+      match: '.'
     },
     'left-parenthesis': {
-      match: /\(/
+      match: '('
     },
     'right-parenthesis': {
-      match: /\)/
+      match: ')'
     },
     'string': {
       match: /(?:"[^"\n]*")|(?:'[^'\n]*')/
     },
     'comma': {
-      match: /,/
+      match: ','
     },
     'semicolon': {
-      match: /;/
+      match: ';'
     },
     'keyword': {
       match: /const|var|let|for|while|function|return|if|typeof|new/
@@ -28,49 +28,49 @@ const javascript = {
       match: /^[0-9]+/
     },
     'colon': {
-      match: /:/
+      match: ':'
     },
     'arrow': {
-      match: /\=>/
+      match: '=>'
     },
     'eeeq': {
-      match: /\=\=\=/
+      match: '==='
     },
     'eeq': {
-      match: /\=\=/
+      match: '=='
     },
     'eq': {
-      match: /\=/
+      match: '='
     },
     'not': {
-      match: /\!/
+      match: '!'
     },
     'and': {
-      match: /&&/
+      match: '&&'
     },
     'bitwise-and': {
-      match: /&/
+      match: '&'
     },
     'or': {
-      match: /\|\|/
+      match: '||'
     },
     'bitwise-or': {
-      match: /\|/
+      match: '|'
     },
     'less-than-or-equal': {
-      match: /\<\=/
+      match: '<='
     },
     'less-than': {
-      match: /\</
+      match: '<'
     },
     'greater-than-or-equal': {
-      match: /\>\=/
+      match: '>='
     },
     'greater-than': {
-      match: /\>/
+      match: '>'
     },
     'question-mark': {
-      match: /\?/
+      match: '?'
     },
     'comment': {
       match: /\/\/[^\n]*\n/
